@@ -1,0 +1,5 @@
+[run]
+source = hello, userprofile
+omit = *tests*, *migrations*, hello/wsgi.py, hello/settings.py, manage.py, fabfile.py
+[report]
+show_missing=True
