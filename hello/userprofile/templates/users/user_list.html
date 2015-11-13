@@ -6,7 +6,7 @@
     {%for user in objects%}
     <li>
         <div>
-            <div class="user-avatar"><img src="/static/{{user.get_user_avatar}}" alt="My image"/></div>
+            <div class="user-avatar"><img src="/{{user.get_user_avatar}}" alt="My image"/></div>
             <div class="infor-box">
                 <label><a href="{%url 'detail' user.id%}">{{user}}</a></label>
                 <label>{{user.specialism}}</label>

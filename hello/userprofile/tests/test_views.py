@@ -43,7 +43,7 @@ class ViewSearchTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_search_with_search_keyword(self):
-        user1 = User.objects.create_user('adam', 'adam@gmail.com', '111111')
+        User.objects.create_user('adam', 'adam@gmail.com', '111111')
         self.client.login(username='john', password='111111')
         # make sure server will response user Adam when client search with keyword adam
         response = self.client.get('/users/search/?s=adam')

@@ -3,7 +3,7 @@ from django.db import models
 
 
 class UserProfile(models.Model):
-    avatar_path = 'images/'
+    avatar_path = 'static/images/'
     region = models.CharField(max_length=120)
     interests = models.CharField(max_length=120)
     specialism = models.CharField(max_length=120)
