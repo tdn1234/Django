@@ -1,8 +1,7 @@
 import os
 
-from fabric.api import env, run, task
+from fabric.api import cd, env, run, task
 from fabric.contrib.project import rsync_project
-
 
 env.host_string = '192.168.73.131'
 env.user = 'django'
@@ -17,18 +16,21 @@ def deploy():
 
 @task
 def hello():
-    run('cd /home/django/Downloads')
-    run('rm -rf Django')
-    run('git clone git@github.com:tdn1234/Django.git')
-    run('cd Django/')
-    run('rm -rf django')
-    run('mkdir django')
-    run('cd django')
-    run('virtualenv django')
-    run('source django/bin/activate')
-    run("cd %s" % env.site_path)
-    run('make test')
-    run('make install')
+    with cd('/home/django/Downloads'):
+        run('rm -rf Django')
+        run('git clone git@github.com:tdn1234/Django.git')
+
+    with cd('/home/django/Downloads/Django/'):
+        run('rm -rf django')
+        run('mkdir django')
+        run('cd django')
+        run('virtualenv django')
+        run('source django/bin/activate')
+
+    with cd('/home/django/Downloads/Django/hello'):
+        run('make test')
+        run('make install')
+
 
 @task
 def deploy_dist():
