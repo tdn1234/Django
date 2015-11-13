@@ -17,14 +17,17 @@ def deploy():
 
 @task
 def hello():
-    run('cd /home/django/Downloads/')
-    # run('git clone git@github.com:tdn1234/Django.git')
+    run('cd /home/django/Downloads')
+    run('rm -rf Django')
+    run('git clone git@github.com:tdn1234/Django.git')
     run('cd Django/')
+    run('rm -rf django')
     run('mkdir django')
     run('cd django')
     run('virtualenv django')
     run('source django/bin/activate')
     run("cd %s" % env.site_path)
+    run('make test')
     run('make install')
 
 @task

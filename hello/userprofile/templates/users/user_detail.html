@@ -3,6 +3,9 @@
 {% load staticfiles %}
 {% load static %}
 <div>
-   <div><img src="/static/{{user.get_user_avatar}}" alt="My image"/>{{user}}</div>
+   <div><img src="/{{user.get_user_avatar}}" alt="My image"/>{{user}}</div>
+   <div>{{user.specialism}}</div>
+   <div>{{user.region}}</div>
+   <div>{{user.interests}}</div>
 </div>
 {% endblock %}

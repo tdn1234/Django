@@ -16,11 +16,10 @@ install:
 	gem install sass
 	gem install compass
 	npm install
+	grunt
 	python manage.py migrate
-
 	python manage.py runserver
     	
-
 test:
 	@coverage run manage.py test userprofile/tests
 	@flake8 .
