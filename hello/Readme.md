@@ -1,6 +1,8 @@
-***Installation instructions**
-**Please follow these step below**
-**install pip tool for python**
+
+==============================================
+***Manually Installation instructions**
+**Please follow these steps below**
+
 sudo apt-get install python-pip
 
 sudo apt-get install fabric
@@ -71,5 +73,5 @@ python manage.py createsuperuser
 python manage.py runserver
 
 
-
-
+===================================
+fill your information about your server you want to deploy project to on fabfile.py and run command "fab hello" for deploying automatically
